@@ -1,6 +1,6 @@
 package dip.lab3.student.solution1;
 
-public class ConsalOutputSource implements MessageOutputSource{
+public class ConsoleOutputSource implements MessageOutputSource{
 
     @Override
     public void sendMessage(String message) {
