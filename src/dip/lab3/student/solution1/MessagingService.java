@@ -10,15 +10,25 @@ public class MessagingService{
         setMessageInputSource(inputSource);
         setMessageOutputSource(outputSource);
     }
-    
-    public final String recieveMessageFromSource(){
+    /**
+    * Receive String Message FROM MessageInputSoruce
+    */
+    public final String receiveMessageFromSource(){
         lastMessageRecieved = inputSource.recieveMessage();
         return lastMessageRecieved;
     }
     
+    /**
+     * Send Message FROM MessageInputSource TO MessageOutputSource
+     */
     public final void sendMessageToSource(){
-        sendMessageToSource(recieveMessageFromSource());
+        sendMessageToSource(receiveMessageFromSource());
     }
+    
+    /**
+    * Send Message TO MessageOutputSource
+    * @param message String object sent to outputSource
+    */
     public final void sendMessageToSource(String message){
         outputSource.sendMessage(message);
         lastMessageSent = message;
@@ -42,6 +52,7 @@ public class MessagingService{
         return inputSource;
     }
     
+    //No Setters Needed for these they are set via send and recieve methods
     public final String getLastMessageRecieved(){return lastMessageRecieved;}
     public final String getLastMessageSent(){return lastMessageSent;}
 }
