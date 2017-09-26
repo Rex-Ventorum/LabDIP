@@ -6,7 +6,8 @@ public class GUIInputSource implements MessageInputSource{
 
     @Override
     public final String recieveMessage() {
-        return JOptionPane.showInputDialog(null, "Type Message: ");
+        String msg = JOptionPane.showInputDialog(null, "Type Message: ");
+        return (msg == null ? "NO MESSAGE" : msg);
     }
     
 }

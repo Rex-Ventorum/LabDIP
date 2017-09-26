@@ -4,11 +4,16 @@ import javax.swing.JOptionPane;
 
 public class StartUp {
     public static void main(String[] args) {
-        MessageInputSource inputSource = new ConsoleInputSource();
+        
+        //--- CHOOSE ONE ---//
+        MessageInputSource inputSource = new GUIInputSource();
+        //MessageInputSource inputSource = new ConsoleInputSource();
+        
+        // --- CHOOSE ONE ---//
         MessageOutputSource outputSource = new GUIOutputSource();
+        //MessageOutputSource outputSource = new ConsoleOutputSource();
+        
         MessagingService msgService = new MessagingService(inputSource,outputSource);
-        msgService.recieveMessageFromSource();
-        msgService.sendMessageToSource(msgService.getLastMessageRecieved());
-
+        msgService.sendMessageToSource();
     }
 }
