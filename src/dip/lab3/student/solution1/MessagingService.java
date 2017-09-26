@@ -1,15 +1,14 @@
 package dip.lab3.student.solution1;
 
 public class MessagingService{
-    private String defaultMessage;
     private String lastMessageRecieved;
+    private String lastMessageSent;
     private MessageInputSource inputSource;
     private MessageOutputSource outputSource;
     
     public MessagingService(MessageInputSource inputSource, MessageOutputSource outputSource){
         setMessageInputSource(inputSource);
         setMessageOutputSource(outputSource);
-        defaultMessage = lastMessageRecieved = "No Message";
     }
     
     public final String recieveMessageFromSource(){
@@ -18,11 +17,11 @@ public class MessagingService{
     }
     
     public final void sendMessageToSource(){
-        if(lastMessageRecieved == null) sendMessageToSource(defaultMessage);
-        else sendMessageToSource(lastMessageRecieved);
+        sendMessageToSource(recieveMessageFromSource());
     }
     public final void sendMessageToSource(String message){
         outputSource.sendMessage(message);
+        lastMessageSent = message;
     }
     
     public final void setMessageInputSource(MessageInputSource inputSource){
@@ -43,12 +42,6 @@ public class MessagingService{
         return inputSource;
     }
     
-    public final void setDefaultMessage(String message){
-        if(message == null) throw new IllegalArgumentException("Default Message May Not Be Null!");
-        defaultMessage = message;
-    }
-
-    public final String getDefaultMessage(){
-        return defaultMessage;
-    }
+    public final String getLastMessageRecieved(){return lastMessageRecieved;}
+    public final String getLastMessageSent(){return lastMessageSent;}
 }
