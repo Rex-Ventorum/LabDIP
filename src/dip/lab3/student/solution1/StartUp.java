@@ -6,8 +6,8 @@ public class StartUp {
     public static void main(String[] args) {
         
         //--- CHOOSE ONE ---//
-        MessageInputSource inputSource = new GUIInputSource();
-        //MessageInputSource inputSource = new ConsoleInputSource();
+        //MessageInputSource inputSource = new GUIInputSource();
+        MessageInputSource inputSource = new ConsoleInputSource();
         
         // --- CHOOSE ONE ---//
         MessageOutputSource outputSource = new GUIOutputSource();
