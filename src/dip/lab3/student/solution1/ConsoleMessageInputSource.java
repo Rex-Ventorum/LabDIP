@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class ConsoleInputSource implements MessageInputSource{
+public class ConsoleMessageInputSource implements MessageInputSource{
 
     @Override
     public final String recieveMessage() {

@@ -9,12 +9,12 @@ public class StartUp {
          ************************************************************************************************************************/
         
         //--- CHOOSE ONE ---//
-        MessageInputSource inputSource = new GUIInputSource();
-        //MessageInputSource inputSource = new ConsoleInputSource();
+        MessageInputSource inputSource = new GUIMessageInputSource();
+        //MessageInputSource inputSource = new ConsoleMessageInputSource();
         
         // --- CHOOSE ONE ---//
-        //MessageOutputSource outputSource = new GUIOutputSource();
-        MessageOutputSource outputSource = new ConsoleOutputSource();
+        //MessageOutputSource outputSource = new GUIMessageOutputSource();
+        MessageOutputSource outputSource = new ConsoleMessageOutputSource();
         
         MessagingService msgService = new MessagingService(inputSource,outputSource);
         

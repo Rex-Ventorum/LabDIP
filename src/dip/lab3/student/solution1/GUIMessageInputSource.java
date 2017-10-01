@@ -2,7 +2,7 @@ package dip.lab3.student.solution1;
 
 import javax.swing.JOptionPane;
 
-public class GUIInputSource implements MessageInputSource{
+public class GUIMessageInputSource implements MessageInputSource{
 
     @Override
     public final String recieveMessage() {

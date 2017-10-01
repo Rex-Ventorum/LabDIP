@@ -2,7 +2,7 @@ package dip.lab3.student.solution1;
 
 import javax.swing.JOptionPane;
 
-public class GUIOutputSource implements MessageOutputSource{
+public class GUIMessageOutputSource implements MessageOutputSource{
 
     @Override
     public final void sendMessage(String message) {
