@@ -26,7 +26,7 @@ public class Startup {
         
         TipCalculatorService tipService = new TipCalculatorService();
         CounsalOutputService outputService = new CounsalOutputService();
-        outputService.printMessageToCounsal("Your tip amount is: " + tipService.getTip(tipCal1));
+        outputService.printMessageToCounsal("Your tip amount is: $" + tipService.getTip(tipCal2));
     }
 
 }
