@@ -18,14 +18,15 @@ import javax.swing.JOptionPane;
  * 
  * @author your name goes here
  */
-public class Startup {
-    public static enum ServiceQuality {
-           GOOD, FAIR, POOR
-    };
- 
+public class Startup { 
     public static void main(String[] args) {
+        double tipPercent = .15;
+        TipCalculator tipCal1 = new BaggageServiceTipCalculator(tipPercent,20);
+        TipCalculator tipCal2 = new FoodServiceTipCalculator(tipPercent,20);
         
-        
+        TipCalculatorService tipService = new TipCalculatorService();
+        CounsalOutputService outputService = new CounsalOutputService();
+        outputService.printMessageToCounsal("Your tip amount is: " + tipService.getTip(tipCal1));
     }
 
 }
